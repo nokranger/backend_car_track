@@ -7,6 +7,7 @@ const bodyParser = require('body-parser')
 
 //import route
 const loginRoute = require('./api/routes/login')
+const customerRoute = require('./api/routes/customer')
 
 app.use((req, res, next) =>{
   // const error = new Error("Not found")
@@ -51,6 +52,7 @@ app.get('/www', (req, res) => {
 // app.use(app.router);
 // routes.initialize(app);
 app.use('/emp', loginRoute)
+app.use('/customer', customerRoute)
 
 let ports = process.env.PORT || 4000
 
